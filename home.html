@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>My Calendar</title>
+    <link rel="stylesheet" type="text/css" href="home.css"/>
+</head>
+<body>
+    <div id="title">
+    <p id=titleText>
+       Welcome to My Calender
+    </p>
+    </div>
+    <div class="loginpart">
+        <label><input type='submit' id='logoutButton' name='logout'  value='Logout' style="display: none"></label>
+    </div>
+    <div class="loginpart" id = 1>
+        <p>
+            Already have account? Login Here!
+        </p><br>
+        <label>Username:<input type="text" id ="username" name="username" placeholder = "Type Username Here" required></label>
+        <label>Password:<input type="password" id ="password" name="password" placeholder = "Type Password Here" required></label>
+        <input type="submit" name="loginSubmit" id = "loginButton" value="Login">
+    </div>
+
+    <div class="loginpart" id  = 2>
+        <p>
+            New User? Please Create Account!
+        </p>
+        <br>
+        <label>Username:<input type="text" id ="newUsername" name="username" placeholder="Type New Username Here" required></label>
+        <label>Password:<input type="password" id ="newPassword" name="password" placeholder = "Type New Password Here" required></label>
+        <input type="submit" name="registerSubmit" id="registerButton" value="Register">
+    </div>
+    <br>
+    <div class="middle" id="middle">
+        <h1 id="thisMonth" class="currentMonth">Current Time</h1>
+        <br>
+        <button id="lastMonth">Last Month</button>
+        <button id="nextMonth">Next Month</button>
+        <br>
+        <button id="showTag">Show Tag</button>
+        <button id="hideTag">Hide Tag</button>
+        <br>
+    </div>
+    
+    <table id="calendar" class="calendar">
+        <tr>
+            <td><b>Sunday</b></td>
+            <td><b>Monday</b></td>
+            <td><b>Tuesday</b></td>
+            <td><b>Wednesday</b></td>
+            <td><b>Thursday</b></td>
+            <td><b>Friday</b></td>
+            <td><b>Saturday</b></td>
+        </tr>    
+        <tr>
+            <td id="day1"> </td>
+            <td id="day2"> </td>
+            <td id="day3"> </td>
+            <td id="day4"> </td>
+            <td id="day5"> </td>
+            <td id="day6"> </td>
+            <td id="day7"> </td>
+        </tr>
+        <tr>
+            <td id="day8"> </td>
+            <td id="day9"> </td>
+            <td id="day10"> </td>
+            <td id="day11"> </td>
+            <td id="day12"> </td>
+            <td id="day13"> </td>
+            <td id="day14"> </td>
+        </tr>
+        <tr>
+            <td id="day15"> </td>
+            <td id="day16"> </td>
+            <td id="day17"> </td>
+            <td id="day18"> </td>
+            <td id="day19"> </td>
+            <td id="day20"> </td>
+            <td id="day21"> </td>
+        </tr>
+        <tr>
+            <td id="day22"> </td>
+            <td id="day23"> </td>
+            <td id="day24"> </td>
+            <td id="day25"> </td>
+            <td id="day26"> </td>
+            <td id="day27"> </td>
+            <td id="day28"> </td>
+        </tr>
+        <tr>
+            <td id="day29"> </td>
+            <td id="day30"> </td>
+            <td id="day31"> </td>
+            <td id="day32"> </td>
+            <td id="day33"> </td>
+            <td id="day34"> </td>
+            <td id="day35"> </td>
+        </tr>
+        <tr id="additional">
+            <td id='day36'> </td>
+            <td id='day37'> </td>
+            <td id='day38'> </td>
+            <td id='day39'> </td>
+            <td id='day40'> </td>
+            <td id='day41'> </td>
+            <td id='day42'> </td>
+        </tr>
+    </table>
+
+    <div class="block" id="editEvent" style="display: none">
+        <div id="left">
+            <p>
+                Creat an event!
+            </p>
+            <label>Event Name:<input type="text" id ="event_name" name="event_name" placeholder="Event Name" required></label>
+            <br>
+            <label>Event Date:</label>
+                <input type="number" id ="event_year" name="event_year" min="0" max="4000" value="2019" placeholder="Year">
+                <input type="number" id ="event_month" name="event_month" min="1" max="12" value="1" placeholder="Month">
+                <input type="number" id ="event_day" name="event_day" min="1" max="31" value="1" placeholder="Day">
+            <br>
+            <label>Event Time: </label>
+                <input type="number" id ="event_hour" name="event_hour" min="0" max="23" value="00" placeholder="Hour">
+                <input type="number" id ="event_minute" name="event_minute" min="00" max="59" value="00" placeholder="Minute">
+           
+            <br>
+            <label>Tag:
+                <select id="tag" name="tag">
+                <option selected="selected" value="default">Default</option>
+                <option value="Study">Study</option>
+                <option value="Life">Life</option>
+                </select>
+            </label>
+            <br>
+            <label>Share with who:
+                <input type="text" id ="user_share" name="user_share" value="" placeholder="User name">
+            </label>
+            <br>
+            <button id="newEvent">Create</button>
+        <br>
+        </div>
+        <div id = "right">
+            <p>
+                Edit an event!
+            </p>
+            <label>Event Name:<input type="text" id ="event_name_edit" name="event_name_edit" placeholder="Event Name" required></label>
+            <br>
+            <label>New Event Date:</label>
+                <input type="number" id ="newEvent_year" name="event_year" min="0000" max="4000" value="2019" placeholder="Year">
+                <input type="number" id ="newEvent_month" name="event_month" min="1" max="12" value="1" placeholder="Month">
+                <input type="number" id ="newEvent_day" name="event_day" min="1" max="31" value="1" placeholder="Day">
+            <br>
+            <label>New Event Time:</label>
+                <input type="number" id ="newEvent_hour" name="newEvent_hour" min="0" max="23" value="00" placeholder="Hour">
+                <input type="number" id ="newEvent_minute" name="newEvent_minute" min="00" max="59" value="00" placeholder="Minute">
+            
+            <br>
+            <label>New Tag:
+                <select id="new_tag" name="new_tag">
+                <option selected="selected" value="default">Default</option>
+                <option value="study">Study</option>
+                <option value="life">Life</option>
+                </select>
+            </label>
+            <br>
+            <label>Share with who:
+                <input type="text" id ="new_user_share" name="new_user_share" value="" placeholder="User Name">
+            </label>
+            <br>
+            <button id="set_event">Edit</button>
+            <br>
+        </div>
+        <div id = "end">
+            <br>
+            <label>Event want to delte:<br><input type="text" id ="event_name_delete" name="event_name_delete" placeholder="input event" required></label>
+            <br>
+            <button id="deleteEvent">Delete</button>
+            <br>
+        </div>
+        
+    </div>
+
+    <script src="login.js"></script>
+    <script src="register.js"></script>
+    <script src="logout.js"></script>
+
+    <script src="calendar.js"></script>
+    <script src="date.js"></script>
+    <script src="curTime.js"></script>
+
+    <script src="newEvent.js"></script>
+    <script src="deleteEvent.js"></script>
+    <script src="editEvent.js"></script>
+    <script src="showEvent.js"></script>
+    
+</body>
+</html>
+
