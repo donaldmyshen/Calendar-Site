@@ -27,9 +27,14 @@ A calender site bulit with php as back-end and JavaScript as front-end.
   - Page passes the W3C validator 
  ---
 # Potential Bug or Error
-  - a bug will show in inspect but function working well
+  - A bug will show in inspect but function working well
  ---
 # Future plan
   - Steady can be better
   - background can be change with different tag 
+ ---
+# Demo
+![image](https://raw.githubusercontent.com/donaldmyshen/Calendar-Site/master/Screenshot/1.png)
+![image](https://raw.githubusercontent.com/donaldmyshen/Calendar-Site/master/Screenshot/2.png)
+![image](https://raw.githubusercontent.com/donaldmyshen/Calendar-Site/master/Screenshot/3.png)
   
